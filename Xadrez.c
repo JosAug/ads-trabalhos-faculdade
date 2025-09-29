@@ -1,33 +1,47 @@
 #include <stdio.h>
-int main()  {
-    //movimento da torre 5 casas a direita;
-    int torre = 0, rainha = 0, bispo = 0, cavalo =1;
-    printf("Movimento da torre:\n");
-    for (torre = 0; torre < 5; torre++) {
+void movimento_torre(int recursoTorre){
+    if (recursoTorre > 0) {
         printf("Direita\n");
+        recursoTorre--;
+        movimento_torre(recursoTorre);
     }
+}
+void movimento_rainha(int recursoRainha){
+    if (recursoRainha > 0) {
+        printf("Esquerda\n");
+        recursoRainha--;
+        movimento_rainha(recursoRainha);
+    }
+}
+void movimento_bispo(int recursoBispo){
+    for (recursoBispo; recursoBispo > 0; recursoBispo--) {
+        for (recursoBispo; recursoBispo > 0 && recursoBispo%2 = 0; recursoBispo--) {
+            printf("cima\n");
+        }
+        printf("direita\n");
+}
+}
+int main() {
+    //movimento da torre 5 casas a direita;
+    int torre = 5, rainha = 8, bispo = 5, cavalo = 1, cavalo1 = 2;
+    printf("Movimento da torre:\n");
+    movimento_torre(torre);
 
     //movimento da rainha 8 casas a esquerda;
     printf("Movimento da rainha:\n");
-    do {
-        printf("Esquerda\n");
-        rainha++;
-    } while (rainha < 8);
+    movimento_rainha(rainha);
 
     //movimento do bispo 5 casas na diagonal;
     printf("Movimento do bispo:\n");
-    while (bispo < 5) {
-        printf("Cima, Direita\n");
-        bispo++;
-    }
+    movimento_bispo(bispo);
 
-    //movimento do cavalo 2 casas pra baixo e 1 casa pra esquerda;
+    //movimento do cavalo 2 casas pra cima e 1 casa pra direita;
     printf("Movimento do cavalo:\n");
-    while (cavalo > 0) {
-       for (int i = 0; i < 2; i++) {
-            printf("Baixo\n");
+    for (cavalo; cavalo > cavalo1 && cavalo >=0; cavalo++) {
+        for (cavalo1; cavalo1 > 0 ; cavalo1--) {
+            printf("Cima\n");
         }
-        printf("Esquerda\n");
-        cavalo--;
+        printf("Direita\n");
     }
 }
+    
