@@ -15,7 +15,7 @@ void movimento_rainha(int recursoRainha){
 }
 void movimento_bispo(int recursoBispo){
     for (recursoBispo; recursoBispo > 0; recursoBispo--) {
-        for (recursoBispo; recursoBispo > 0 && recursoBispo%2 = 0; recursoBispo--) {
+        for (recursoBispo; recursoBispo %2 ; recursoBispo--) {
             printf("cima\n");
         }
         printf("direita\n");
@@ -23,7 +23,7 @@ void movimento_bispo(int recursoBispo){
 }
 int main() {
     //movimento da torre 5 casas a direita;
-    int torre = 5, rainha = 8, bispo = 5, cavalo = 1, cavalo1 = 2;
+    int torre = 5, rainha = 8, bispo = 5, cavalo = 2;
     printf("Movimento da torre:\n");
     movimento_torre(torre);
 
@@ -33,12 +33,12 @@ int main() {
 
     //movimento do bispo 5 casas na diagonal;
     printf("Movimento do bispo:\n");
-    movimento_bispo(bispo);
+    movimento_bispo(bispo*2-1);
 
     //movimento do cavalo 2 casas pra cima e 1 casa pra direita;
     printf("Movimento do cavalo:\n");
-    for (cavalo; cavalo > cavalo1 && cavalo >=0; cavalo++) {
-        for (cavalo1; cavalo1 > 0 ; cavalo1--) {
+    for (cavalo; cavalo > 0 ; cavalo--) {
+        for (cavalo; cavalo ; cavalo--) {
             printf("Cima\n");
         }
         printf("Direita\n");
